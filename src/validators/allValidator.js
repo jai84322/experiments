@@ -6,3 +6,6 @@ let myName = function greet (name){
 
 
 module.exports.myName = myName
+
+
+let end = "hello sir"
