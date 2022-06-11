@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // mongoose
 //   .connect(
-//     'mongodb+srv://jai84322:Bing%401234%23@demo.3li78.mongodb.net/group106Database?retryWrites=true&w=majority',
+//     'mongodb+srv://jai84322:Bing%401234%23@demo.3li78.mongodb.net/experiments?retryWrites=true&w=majority',
 //     {
 //       useNewUrlParser: true,
 //     },
