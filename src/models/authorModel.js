@@ -20,7 +20,7 @@ const authorSchema = new mongoose.Schema({
     email : {
         type : String,
         required: "email is required",
-        unique : true,
+        unique : "email has to be unique",
         trim : true
     },
     password : {
