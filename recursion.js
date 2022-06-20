@@ -67,18 +67,21 @@
 
         // using recursion //
 
-function factorial (n,m,fac) {
-    if (n==m || n ==0) {
-        fac *= n
-        console.log(fac)
-        return 
-    }
-    fac *= n
-    factorial(n-1,m,fac)
-}
+// function factorial (n,m,fac) {
+//     if (n==m || n ==0) {
+//         fac *= n
+//         console.log(fac)
+//         return 
+//     }
+//     fac *= n
+//     factorial(n-1,m,fac)
+// }
 
-factorial(0,1,1)
+// factorial(0,1,1)
 
 // main = 5
 // base case = agr 0 ho jaye toh 
 // math = 
+
+
+``
