@@ -260,4 +260,5 @@
 
 // will not compare a string/number to a Boolean
 
-
+// console.log( ("9" || "10") !== "7");
+// true
