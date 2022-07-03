@@ -91,3 +91,34 @@
 // undefine = it is put by js language
 // null = it is put by dev ki aage kuch daal dunga abhi ni pta kya dalu toh null daal diya 
 // just like seat rokne ke liye bus me hankey rakh dete h 
+
+// let arr = 'hello123'
+// console.log(arr);
+// console.log(typeof arr);
+
+// let newArr = Number(arr)
+// console.log(newArr);
+// console.log(typeof newArr);
+
+// console.log(Boolean(isNaN('s78')))
+
+// const str1 = 'hello42world';
+// const str2 = 'hello world';
+
+// function containsNumber(str) {
+//   let arr =  /\d/.test(str);
+//   return arr
+// }
+
+// console.log(containsNumber(str1)); // 👉️ true
+// console.log(containsNumber(str2)); // 👉️ false
+
+
+// const isValid = function (value) {
+
+
+//     if (typeof value == Number || value == Boolean ) return false;
+//     if (/\d/.test(value) == true)  return false;
+//     if (typeof value == "string" && value.trim().length == 0) return false;
+//     else if (typeof value == "string") return true;
+//   };
