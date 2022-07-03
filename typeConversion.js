@@ -239,10 +239,10 @@
 // console.log(arr.concat(n));
 
 
-// let c = Number(true)
-// let d  =Number(false)
-// let e = Number(null)
-// let f = Number(undefined)
+// let c = Number(true) // 1
+// let d  =Number(false) // 0
+// let e = Number(null) // 0
+// let f = Number(undefined) // NaN
 
 // console.log(c);
 // console.log(d);
