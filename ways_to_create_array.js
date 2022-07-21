@@ -17,3 +17,6 @@ console.log(arr4);
 console.log(newArr);
 
 
+let helArr = [...arr4]
+helArr[2] = 55
+console.log(helArr);
