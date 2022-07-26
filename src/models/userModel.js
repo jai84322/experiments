@@ -4,17 +4,18 @@ const userSchema = new mongoose.Schema({
 
     fname: {
         type: String,
-        required: true,
+        required: true
     },
     lname: {
         type: String,
-        required: true,
+        required: true
     },
     email: {
         type: String,
         required: true,
         unique: true,
-        lowercase:true
+        lowercase:true,
+        trim : true
     },
     profileImage: {
         type: String,
@@ -23,21 +24,25 @@ const userSchema = new mongoose.Schema({
     phone: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        trim : true
     },
     password: {
         type: String,
-        required: true
+        required: true,
+        trim : true
     },
     address: {
         shipping: {
             street: {
                 type: String,
-                required: true
+                required: true,
+                trim : true
             },
             city: {
                 type: String,
-                required: true
+                required: true,
+                trim : true
             },
             pincode: {
                 type: Number,
@@ -47,11 +52,13 @@ const userSchema = new mongoose.Schema({
         billing: {
             street: {
                 type: String,
-                required: true
+                required: true,
+                trim : true
             },
             city: {
                 type: String,
-                required: true
+                required: true,
+                trim : true
             },
             pincode: {
                 type: Number,
