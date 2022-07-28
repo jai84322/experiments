@@ -15,8 +15,6 @@ const {isValidRequest, isValidAddress, isValidFile, isValidObjectId, isValidPhon
 let register = async function (req, res) {
 
     try {
-        // let data = req.body;
-        // console.log(req.body)
        
         let data = JSON.parse(JSON.stringify(req.body))
 
@@ -84,7 +82,7 @@ let register = async function (req, res) {
 
         // bcrpt logic implementation
         const encryptedPassword = await bcrypt.hash(password, saltRounds)
-        console.log(encryptedPassword)
+        // console.log(encryptedPassword)
         const userrequestBody = { fname, lname, email, phone, profileImage: profilePicture, password: encryptedPassword , address:address}
 
           const newUser = await userModel.create(userrequestBody);
@@ -98,8 +96,8 @@ let register = async function (req, res) {
 
 
     } catch (error) {
-        console.log(error)
-        console.log(error.message)
+        // console.log(error)
+        // console.log(error.message)
         res.status(500).send({ status: false, message: error })
         
     }
@@ -191,9 +189,6 @@ const updateUser = async function (req, res) {
     let obj = {}
     let userId = req.params.userId
     
-    console.log(req.files)
-    // console.log(fname);
-    // console.log(lname);
     let files = req.files
 
     if (!isValidRequest(req.body) && req.files.length == 0) {
@@ -276,7 +271,7 @@ const updateUser = async function (req, res) {
 
 
     if (address) {
-        console.log(address)
+
         let address1 = JSON.parse(address)
         // let address1 = address
         
@@ -345,10 +340,6 @@ const updateUser = async function (req, res) {
     let updatedUser = await userModel.findOneAndUpdate({ _id: userId }, obj, { new: true })
     return res.status(200).send({ status: true, message: "User profile updated", data: updatedUser })
 }
-
-
-
-
 
 
 

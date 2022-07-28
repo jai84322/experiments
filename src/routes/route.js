@@ -1,7 +1,7 @@
 const express = require('express');
 
 const { getUserProf,register,loginUser,updateUser} = require('../controllers/userController')
-const {createProduct} = require('../controllers/productController')
+const {createProduct, getProduct} = require('../controllers/productController')
 const router = express.Router();
 const {authentication, authorization} = require('../middleware/auth')
 
@@ -15,6 +15,7 @@ router.put('/user/:userId/profile',  authentication, authorization, updateUser)
 
 // product API
 router.post('/products', createProduct);
+router.get('/products', getProduct);
 
 
 
