@@ -1,0 +1,15 @@
+{
+  "name": "mongodb-model",
+  "version": "1.0.0",
+  "description": "https://github.com/jai84322/experiments.git",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.5.0",
+    "nodemon": "^2.0.19"
+  }
+}
