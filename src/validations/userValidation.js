@@ -19,7 +19,7 @@ function isValidFile(x) {
 function isValidString(x){
     if(typeof x != "string") return false;
     const regEx = /^\s*[a-zA-Z]+(\.[a-zA-Z\s]+)*[a-zA-Z\s]\s*$/;
-    console.log(regEx.test(x)) 
+    // console.log(regEx.test(x)) 
     return regEx.test(x)
 }
 

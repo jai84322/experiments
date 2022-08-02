@@ -272,7 +272,11 @@ const updateUser = async function (req, res) {
 
     if (address) {
 
+        // console.log(typeof address)
+        console.log(address)
+
         let address1 = JSON.parse(address)
+        console.log(address1);
         // let address1 = address
         
 

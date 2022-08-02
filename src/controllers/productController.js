@@ -111,6 +111,15 @@ let createProduct = async function (req, res) {
 }
 
 
+
+const isValidSize = (Size) => {
+    let correctSize = ["S", "XS", "M", "X", "L", "XXL", "XL"]
+    return (correctSize.includes(Size))
+  }
+
+
+
+
 const getProduct = async function (req, res) {
     let { name, size, priceGreaterThan, priceLessThan, priceSort } = req.query
     let filters = { isDeleted: false }
@@ -122,7 +131,11 @@ const getProduct = async function (req, res) {
         filters.title = {$in : fTitle} // title me agar is array elements me se kuch bhi milra ho na to le aao 
     }
 
-    if (size) { filters.availableSizes = size }
+    if (size) {
+        let size1 = size.split(",").map(x => x.trim().toUpperCase())
+        if (size1.map(x => isValidSize(x)).filter(x => x === false).length !== 0) return res.status(400).send({ status: false, message: "Size Should be among  S,XS,M,X,L,XXL,XL" })
+        filters.availableSizes = { $in: size1 }
+    }
 
     if (priceGreaterThan) {
         filters.price = { $gt: priceGreaterThan }
@@ -134,6 +147,10 @@ const getProduct = async function (req, res) {
 
     if (priceGreaterThan && priceLessThan) {
         filters.price = { $gt: priceGreaterThan, $lt: priceLessThan }
+    }
+
+    if (priceSort) {
+        if (priceSort !=  (1 || -1)) {return res.status(400).send({status: false, message : "priceSort value can only be 1 or -1"})}
     }
 
     let getData = await productModel.find(filters).sort({ price: priceSort })
