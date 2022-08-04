@@ -23,5 +23,12 @@ const createUser = async function (req,res) {
     return res.send({status: true, data : savedData})
 }
 
+const updateUser = async function (req,res) {
+    data = req.body
 
-module.exports = {createUser}
+    let updateData = await userModel.findOneAndUpdate({_id : userId}, {$set: {}}, {new:true})
+    return res.status(200).send({status: true, message: "data updated successfully", data : updateData})
+}
+
+
+module.exports = {createUser, updateUser}

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+let ObjectId = mongoose.Types.ObjectId
 
 const userSchema = new mongoose.Schema({
     fname : {
@@ -25,7 +26,21 @@ const userSchema = new mongoose.Schema({
     isDeleted: {
         type: Boolean,
         default: false
-    }
+    },
+    items : [{
+        productId: { type: ObjectId, ref: "Product", required: true},
+        quantity: { type: Number, required: true },
+        // _id: false
+    }],
+    price :{
+        indianPrice : {type : Number},
+        europeanPrice : {type: Number}
+    },
+    human : [{
+        man : {type: Number},
+        women : {type: Number}
+    }]
+
 })
 
 module.exports = mongoose.model('User', userSchema)

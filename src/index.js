@@ -19,7 +19,7 @@ mongoose.connect(myUrl, {useNewUrlParser: true})
 // });
 
 
-app.use('/hello', route)
+app.use('/', route)
 
 
 app.listen(process.env.PORT || 3000, function () {

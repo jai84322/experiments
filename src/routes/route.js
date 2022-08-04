@@ -3,7 +3,8 @@ const router = express.Router()
 const {createUser} = require('../controllers/userController')
 
 
-router.post('/user', createUser)
+router.post('/createUser', createUser)
+router.post('/updateUser', createUser)
 
 
 
